@@ -55,7 +55,7 @@ public class PlayerUtils {
 
         // BufferedImage buffImage = ImageIO.read((new File((args[0]))));
 
-        int scaleY = buffImage.getHeight() / 100;
+        int scaleY = buffImage.getHeight() / 200;
         int scaleX = buffImage.getWidth() / 50;
 
         for (int y = 0; y < buffImage.getHeight() - scaleY; y = y + scaleX) {
@@ -77,13 +77,13 @@ public class PlayerUtils {
                 } else if (averageIntensity <= 200 && averageIntensity > 160) {
                     System.out.print("*");
                 } else if (averageIntensity <= 160 && averageIntensity > 120) {
-                    System.out.print("-");
+                    System.out.print("X");
                 } else if (averageIntensity <= 120 && averageIntensity > 80) {
-                    System.out.print("@");
+                    System.out.print("&");
                 } else if (averageIntensity <= 80 && averageIntensity > 40) {
-                    System.out.print("#");
+                    System.out.print("G");
                 } else {
-                    System.out.print("%");
+                    System.out.print("@");
                 }
             }
             System.out.println();

@@ -4,7 +4,7 @@ public abstract class FilePlayer implements Player {
     protected File file;
 
     public FilePlayer(File file) {
-        file = file;
+        this.file = file;
     }
 
 }

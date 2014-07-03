@@ -59,7 +59,7 @@ public class ImageToASCII {
         BufferedImage buffImage = ImageIO.read((new File((args[0]))));
 
         int scaleY = buffImage.getHeight() / 100;
-        int scaleX = buffImage.getWidth() / 50;
+        int scaleX = buffImage.getWidth() / 100;
 
         for (int y = 0; y < buffImage.getHeight() - scaleY; y = y + scaleX) {
             for (int x = 0; x < buffImage.getWidth() - scaleX; x = x + scaleY) {
