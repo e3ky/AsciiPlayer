@@ -5,7 +5,10 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class ImageToASCII {
+public class PlayerUtils {
+    static void write(BufferedImage buffImg) throws IOException {
+        scale(buffImg);
+    }
 
     public static void drawPixel(Color color) {
         int intensity = (color.getGreen() + color.getBlue() + color.getRed()) / 3;
@@ -28,13 +31,7 @@ public class ImageToASCII {
 
     }
 
-    public static void main(String[] args) throws IOException {
-
-        // drowImageInASCII(args);
-        Scale(args);
-    }
-
-    private static void drowImageInASCII(String[] args) throws IOException {
+    private static void drawImageInASCII(String[] args) throws IOException {
         System.out.println(args[0]);
         BufferedImage buffImage = ImageIO.read((new File((args[0]))));
         // buffImage.
@@ -54,9 +51,9 @@ public class ImageToASCII {
         }
     }
 
-    public static void Scale(String[] args) throws IOException {
-        System.out.println(args[0]);
-        BufferedImage buffImage = ImageIO.read((new File((args[0]))));
+    public static void scale(BufferedImage buffImage) throws IOException {
+
+        // BufferedImage buffImage = ImageIO.read((new File((args[0]))));
 
         int scaleY = buffImage.getHeight() / 100;
         int scaleX = buffImage.getWidth() / 50;
