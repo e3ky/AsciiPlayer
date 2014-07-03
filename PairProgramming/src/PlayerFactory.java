@@ -1,6 +1,7 @@
+import java.io.File;
 
 public class PlayerFactory {
-    Player makeNewPlayer(String path) {
+    public static Player makeNewPlayer(String path) {
         String extension = "";
 
         int i = path.lastIndexOf('.');
@@ -8,8 +9,12 @@ public class PlayerFactory {
             extension = path.substring(i + 1);
         }
 
-        if (extension.equals(".jpg") || extension.equals(".png")) {
-            return new PicturePlayer(File);
+        System.out.println("Extensin: " + extension);
+        if (extension.equals("jpg") || extension.equals("png")) {
+            return new PicturePlayer(new File(path));
+        } else {
+            return null;
         }
+
     }
 }
